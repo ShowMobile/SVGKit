@@ -7,6 +7,8 @@
 
 #import "SVGUtils.h"
 
+#import "SVGLog.h"
+
 #define MAX_ACCUM 64
 #define NUM_COLORS 147
 
@@ -376,7 +378,7 @@ CGFloat SVGPercentageFromString (const char *string) {
 	size_t len = strlen(string);
 	
 	if (string[len-1] != '%') {
-		NSLog(@"Invalid percentage: %s", string);
+		SVGDLog(@"Invalid percentage: %s", string);
 		return -1;
 	}
 	

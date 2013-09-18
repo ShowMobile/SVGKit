@@ -37,7 +37,7 @@
 	NSCharacterSet *whitespaceSet = [NSCharacterSet whitespaceAndNewlineCharacterSet];
 	rule = [rule stringByTrimmingCharactersInSet:whitespaceSet];
 	
-	//             NSLog(@"A substringie %@", idStyleString);
+	//             SVGDLog(@"A substringie %@", idStyleString);
 	
 	NSArray* stringSplitContainer = [rule componentsSeparatedByString:@"{"];
 	if( [stringSplitContainer count] >= 2 ) //not necessary unless using shitty svgs

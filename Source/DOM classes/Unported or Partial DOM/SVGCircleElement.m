@@ -7,13 +7,15 @@
 
 #import "SVGCircleElement.h"
 
+#import "SVGLog.h"
+
 @implementation SVGCircleElement
 
 @dynamic r;
 
 - (CGFloat)r {
 	if (self.rx != self.ry) {
-		NSLog(@"Undefined radius of circle");
+		SVGDLog(@"Undefined radius of circle");
 		return 0.0f;
 	}
 	

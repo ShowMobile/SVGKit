@@ -5,6 +5,8 @@
 
 #import "NodeList+Mutable.h" // needed for access to underlying array, because SVG doesnt specify how lists are made mutable
 
+#import "SVGLog.h"
+
 @implementation Document
 
 @synthesize doctype;
@@ -23,7 +25,7 @@
 {
 	Element* newElement = [[Element alloc] initWithLocalName:tagName attributes:nil];
 	
-	NSLog( @"[%@] WARNING: SVG Spec, missing feature: if there are known attributes with default values, Attr nodes representing them SHOULD BE automatically created and attached to the element.", [self class] );
+	SVGDLog( @"[%@] WARNING: SVG Spec, missing feature: if there are known attributes with default values, Attr nodes representing them SHOULD BE automatically created and attached to the element.", [self class] );
 	
 	return newElement;
 }
@@ -84,7 +86,7 @@
 {
 	Element* newElement = [[Element alloc] initWithQualifiedName:qualifiedName inNameSpaceURI:namespaceURI attributes:nil];
 	
-	NSLog( @"[%@] WARNING: SVG Spec, missing feature: if there are known attributes with default values, Attr nodes representing them SHOULD BE automatically created and attached to the element.", [self class] );
+	SVGDLog( @"[%@] WARNING: SVG Spec, missing feature: if there are known attributes with default values, Attr nodes representing them SHOULD BE automatically created and attached to the element.", [self class] );
 	
 	return newElement;
 }

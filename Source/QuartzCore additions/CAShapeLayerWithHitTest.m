@@ -1,5 +1,7 @@
 #import "CAShapeLayerWithHitTest.h"
 
+#import "SVGLog.h"
+
 /*! Used by the main ShapeElement (and all subclasses) to do perfect "containsPoint" calculations via Apple's API calls
  
  This will only be called if it's the root of an SVG document and the hit was in the parent view on screen,
@@ -19,7 +21,7 @@
 		{
 			for( CALayer* subLayer in self.sublayers )
 			{
-				NSLog(@"...contains point, Apple will now check sublayer: %@", subLayer);
+				SVGDLog(@"...contains point, Apple will now check sublayer: %@", subLayer);
 			}
 			return TRUE;
 		}

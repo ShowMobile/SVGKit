@@ -18,6 +18,8 @@
 
 #import "SVGDocument_Mutable.h"
 
+#import "SVGLog.h"
+
 @implementation SVGKParserSVG
 
 static NSDictionary *elementMap;
@@ -73,7 +75,7 @@ static NSDictionary *elementMap;
 		
 		if (!elementClass) {
 			elementClass = [SVGElement class];
-			NSLog(@"Support for '%@' element has not been implemented", name);
+			SVGDLog(@"Support for '%@' element has not been implemented", name);
 		}
 		
 		/**
